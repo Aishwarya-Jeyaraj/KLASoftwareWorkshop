@@ -1,6 +1,9 @@
 import yaml
 import datetime
 import csv
+import os
+import logging.config
+import logging
 
 with open(r'E:\KLA\Milestone1\Milestone1A.yaml') as file:
     documents = yaml.full_load(file)
