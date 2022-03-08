@@ -5,7 +5,7 @@ import os
 import logging.config
 import logging
 
-with open(r'E:\KLA\Milestone1\Milestone1A.yaml') as file:
+with open(r'D:\KLA\Milestone1\Milestone1A.yaml') as file:
     documents = yaml.full_load(file)
 
     for item, doc in documents.items():
@@ -20,13 +20,13 @@ with open(r'E:\KLA\Milestone1\Milestone1A.yaml') as file:
             writer = csv.writer(f)
             writer.writerow(doc)
 
-        rehearsal=0
+        count=0
 
         with open('Milestone1.txt', 'w') as f:
             for line in doc:
                 f.write(now.strftime("%Y-%m-%d %H:%M:%S"))
-                f.write("000000;")
-                f.write(line)
+                f.write(".000000;")
+                
                 
         
                 print()
@@ -42,13 +42,11 @@ with open(r'E:\KLA\Milestone1\Milestone1A.yaml') as file:
                         print(key,val)
                 except ValueError:
                     print("M1A_Workflow Entry")
-                    if(rehearsal%2==0):
+                    if(count%2==0):
                         f.write(" M1A_Workflow Entry")
                     else:
                         f.write(" M1A_Workflow Exit")
                     f.write("\n")
-                    rehearsal+=1
+                    count+=1
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logging.debug('Trailing the log.')
-
-
