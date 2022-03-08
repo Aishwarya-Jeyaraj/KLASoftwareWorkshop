@@ -45,5 +45,7 @@ with open(r'E:\KLA\Milestone1\Milestone1A.yaml') as file:
                         f.write(" M1A_Workflow Exit")
                     f.write("\n")
                     rehearsal+=1
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.debug('Trailing the log.')
 
 
